@@ -2,3 +2,4 @@ api/bin
 api/obj
 
 ui/node_modules
+ui/.angular
