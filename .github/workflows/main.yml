@@ -26,14 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run test
-      - name: read lcov file
-        if: success() || failure()
-        shell: powershell
-        run: Get-Content ./coverage/ui/lcov.info
-  print-test:
-    needs: run-test
-    runs-on: windows-latest
-    steps:
+        continue-on-error: true
       - name: read lcov file
         shell: powershell
         run: Get-Content ./coverage/ui/lcov.info
