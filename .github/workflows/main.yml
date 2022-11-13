@@ -27,6 +27,7 @@ jobs:
       - run: npm ci
       - run: npm run test
       - name: read lcov file
+        if: success() || failure()
         shell: powershell
         run: Get-Content ./coverage/ui/Icov.info
   print-test:
