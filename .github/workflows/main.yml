@@ -26,3 +26,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run test
+      - name: read lcov file
+        shell: powershell
+        run: Get-Content ./coverage/ui/Icov.info
