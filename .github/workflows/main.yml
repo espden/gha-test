@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  run-test:
     runs-on: windows-latest
     defaults:
       run:
@@ -26,6 +26,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run test
+      - name: read lcov file
+        shell: powershell
+        run: Get-Content ./coverage/ui/Icov.info
+  print-test:
+    needs: run-test
+    runs-on: windows-latest
+    steps:
       - name: read lcov file
         shell: powershell
         run: Get-Content ./coverage/ui/Icov.info
