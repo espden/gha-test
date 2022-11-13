@@ -29,17 +29,11 @@ jobs:
       - name: read lcov file
         if: success() || failure()
         shell: powershell
-        run: |
-          ls
-          cd ./coverage
-          ls
-          cd ./ui
-          ls
-          Get-Content ./coverage/ui/Icov.info
+        run: Get-Content ./coverage/ui/lcov.info
   print-test:
     needs: run-test
     runs-on: windows-latest
     steps:
       - name: read lcov file
         shell: powershell
-        run: Get-Content ./coverage/ui/Icov.info
+        run: Get-Content ./coverage/ui/lcov.info
