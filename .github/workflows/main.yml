@@ -32,7 +32,7 @@ jobs:
         run: Get-Content ./coverage/ui/lcov.info
   sonar-cloud-analysis:
     needs: run-test
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Analyze with SonarCloud
