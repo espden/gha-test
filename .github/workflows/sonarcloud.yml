@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: ls
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
         env:
