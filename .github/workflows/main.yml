@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./ui
@@ -44,4 +44,3 @@ jobs:
           args:
             -Dsonar.projectKey=espden_gha-test
             -Dsonar.organization=espden
-            -Dsonar.scm.provider=git
