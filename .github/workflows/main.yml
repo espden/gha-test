@@ -33,6 +33,9 @@ jobs:
   sonar-cloud-analysis:
     needs: run-test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ui
 
     steps:
       - name: Analyze with SonarCloud
