@@ -28,8 +28,7 @@ jobs:
       - run: npm run test
         continue-on-error: true
       - name: read lcov file
-        shell: powershell
-        run: Get-Content ./coverage/ui/lcov.info
+        run: cat ./coverage/ui/lcov.info
   sonar-cloud-analysis:
     needs: run-test
     runs-on: ubuntu-latest
