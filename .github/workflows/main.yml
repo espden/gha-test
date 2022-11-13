@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./ui
@@ -28,11 +28,10 @@ jobs:
       - run: npm run test
         continue-on-error: true
       - name: read lcov file
-        shell: powershell
-        run: Get-Content ./coverage/ui/lcov.info
+        run: cat ./coverage/ui/lcov.info
   sonar-cloud-analysis:
     needs: run-test
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Analyze with SonarCloud
