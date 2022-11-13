@@ -47,3 +47,4 @@ jobs:
           args:
             -Dsonar.projectKey=espden_gha-test
             -Dsonar.organization=espden
+            -Dsonar.scm.provider=git
